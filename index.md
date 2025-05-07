@@ -113,6 +113,21 @@ Cria um novo pedido para um estabelecimento específico.
 Consulta eventos pendentes.  
 **Requer autenticação Bearer Token**
 
+#### Corpo da Resposta
+
+```json
+[
+  {
+    id: "0b237331-2b5d-4c48-a5fa-adfc1301c2fa",
+    code: "AAD",
+    fullCode: "ARRIVED_AT_DESTINATION",
+    orderId: "b372dbec-3d98-46cd-bc01-b7a69ecb7668",
+    merchantId: "94ed8e9f-d11f-46f0-a144-fa9a9ad39bab",
+    createdAt: "2023-08-22T14:50:30+00:00",
+  }
+]
+```
+
 ---
 
 ## ✅ Confirmar Recebimento de Eventos
