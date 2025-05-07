@@ -9,7 +9,6 @@ API para integração de pedidos logísticos com autenticação, criação de pe
 |----------|----------|
 | Produção | `https://api-conector.deliverylab.com.br` |
 | Desenvolvimento | `https://api-conector.deliverylab.dev.br` |
-| Local (Polling) | `http://localhost:3000` |
 
 ---
 
@@ -23,7 +22,7 @@ Obtém um token de acesso com base nas credenciais do cliente.
 
 - `client_id` (string): ID do cliente  
 - `client_secret` (string): Segredo do cliente  
-- `grant_type` (string): Tipo de concessão (ex: `client_credentials`)  
+- `grant_type` (string): Tipo de concessão (Atualmente só aceita `client_credentials`)  
 
 #### Exemplo de Resposta
 
@@ -111,7 +110,7 @@ Cria um novo pedido para um estabelecimento específico.
 
 ### `GET /prod/events:polling`
 
-Consulta eventos pendentes localmente.  
+Consulta eventos pendentes.  
 **Requer autenticação Bearer Token**
 
 ---
@@ -120,8 +119,12 @@ Consulta eventos pendentes localmente.
 
 ### `POST /events/acknowledgment`
 
-Confirma o recebimento de eventos já processados.  
+Confirma o recebimento de eventos já processados.
 **Requer autenticação Bearer Token**
+
+#### Parâmetros do corpo da requisição
+
+- `id`: ID do evento consumido
 
 #### Corpo da Requisição
 
